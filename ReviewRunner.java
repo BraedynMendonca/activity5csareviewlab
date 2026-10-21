@@ -38,12 +38,13 @@ public class ReviewRunner {
       System.out.println("Reviews analyzed: " + totalReviews);
 
       if (totalReviews > 0) {
-        System.out.printf("Positive: %d (%.1f%%)%n", positiveReviews,
-            positiveReviews * 100.0 / totalReviews);
-        System.out.printf("Negative: %d (%.1f%%)%n", negativeReviews,
-            negativeReviews * 100.0 / totalReviews);
-        System.out.printf("Neutral: %d (%.1f%%)%n", neutralReviews,
-            neutralReviews * 100.0 / totalReviews);
+        double positivePercent = positiveReviews * 100.0 / totalReviews;
+        double negativePercent = negativeReviews * 100.0 / totalReviews;
+        double neutralPercent = neutralReviews * 100.0 / totalReviews;
+
+        System.out.println("Positive: " + positiveReviews + " (" + positivePercent + "%)");
+        System.out.println("Negative: " + negativeReviews + " (" + negativePercent + "%)");
+        System.out.println("Neutral: " + neutralReviews + " (" + neutralPercent + "%)");
       }
     } catch (Exception e) {
       System.out.println("Could not read reviewTexts.txt");
